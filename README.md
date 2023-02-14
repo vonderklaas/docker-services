@@ -1,4 +1,10 @@
+### Docker CRUD
+
+This is a project where using Docker we can spin up Node and MongoDB instances in a container and communicate between them. Also, added Nginx image to add it as a Load Balancer for multiple Node instances
+
 ### Architecture
+
+![Architecture](https://github.com/garbalau-github/docker-node-mongo/blob/main/architecture.png?raw=true)
 
 ### Run DEV Containers
 
