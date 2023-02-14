@@ -1,6 +1,6 @@
-### Docker CRUD
+### Docker with Node and MongoDB
 
-This is a project where using Docker we can spin up Node and MongoDB instances in a container and communicate between them. Also, added Nginx image to add it as a Load Balancer for multiple Node instances
+REST API split into two isolated Docker containers, one running Node, another running MongoDB instance. Third container runs Nginx, which does the Load Balancing between different Node instances.
 
 ### Architecture
 
