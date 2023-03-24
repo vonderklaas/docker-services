@@ -1,25 +1,25 @@
-### Docker with Node and MongoDB
+### Serverless AWS Node
 
-REST API split into two isolated Docker containers, one running Node, another running MongoDB instance. Third container runs Nginx, which does the Load Balancing between different Node instances.
+This is a minimal application made using Serverless architecture with AWS Cloud and Lambda Functions. I used API Gateway, DynamoDB & CloudWatch as well.
 
-### Architecture
 
-![Architecture](https://github.com/garbalau-github/docker-node-mongo/blob/main/architecture.png?raw=true)
-
-### Run DEV Containers
+### Lambda Functions
 
 ```
-docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+addTodo: aws-node-http-api-project-dev-addTodo
+fetchTodos: aws-node-http-api-project-dev-fetchTodos
+fetchTodo: aws-node-http-api-project-dev-fetchTodo
+updateTodo: aws-node-http-api-project-dev-updateTodo
 ```
 
-### Kill DEV Containers
+### Deploy all infrastructure
 
 ```
-docker-compose -f docker-compose.yml -f docker-compose.dev.yml down
+serverless deploy --verbose
 ```
 
-### Scale Node Instances
+### Deploy only specific Lambda function
 
 ```
-docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d --scale node-app=2
+serverless deploy -f `functionName`
 ```
